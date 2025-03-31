@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubarak Farheena!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f8f3e9;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#d4af37 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #d4af37, #006400, #d4af37);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #006400;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin: 1rem 0;
+            font-weight: 700;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .decoration {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .moon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d4af37, #f5e7a3);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+            position: relative;
+            margin-right: 20px;
+            animation: glow 3s infinite alternate;
+        }
+        
+        .star {
+            position: relative;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 20px;
+            border-right: 10px solid transparent;
+            border-bottom: 7px solid #d4af37;
+            border-left: 10px solid transparent;
+            transform: rotate(35deg);
+            animation: twinkle 2s infinite alternate;
+        }
+        
+        .star:before {
+            border-bottom: 8px solid #d4af37;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            position: absolute;
+            height: 0;
+            width: 0;
+            top: -5px;
+            left: -6px;
+            display: block;
+            content: '';
+            transform: rotate(-35deg);
+        }
+        
+        .star:after {
+            position: absolute;
+            display: block;
+            color: #d4af37;
+            top: 0px;
+            left: -10px;
+            width: 0px;
+            height: 0px;
+            border-right: 10px solid transparent;
+            border-bottom: 7px solid #d4af37;
+            border-left: 10px solid transparent;
+            transform: rotate(-70deg);
+            content: '';
+        }
+        
+        .lantern {
+            width: 30px;
+            height: 45px;
+            background: linear-gradient(135deg, #d4af37, #f5e7a3);
+            border-radius: 5px;
+            position: relative;
+            margin: 0 15px;
+            animation: sway 4s infinite alternate;
+        }
+        
+        .lantern::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 10px;
+            background-color: #d4af37;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .lantern::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 5px;
+            background-color: #d4af37;
+            border-radius: 0 0 5px 5px;
+        }
+        
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px rgba(212, 175, 55, 0.6); }
+            100% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.9); }
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.5; transform: rotate(35deg) scale(0.9); }
+            100% { opacity: 1; transform: rotate(35deg) scale(1.1); }
+        }
+        
+        @keyframes sway {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-5px) rotate(2deg); }
+            100% { transform: translateY(0) rotate(-2deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .card {
+                padding: 2rem 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .name {
+                font-size: 1.8rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .decoration {
+                margin: 1.5rem 0;
+            }
+            
+            .moon {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pattern"></div>
+    <div class="container">
+        <div class="card">
+            <h1>Eid Mubarak</h1>
+            <div class="decoration">
+                <div class="lantern"></div>
+                <div class="moon"></div>
+                <div class="star"></div>
+                <div class="lantern"></div>
+            </div>
+            <p>Wishing you a blessed and joyous Eid filled with peace, happiness, and prosperity.</p>
+            <div class="name">Farheena Faridi</div>
+            <p>May this special day bring endless blessings, love, and beautiful moments to cherish forever. May Allah accept your prayers and sacrifices and shower His mercy upon you and your loved ones.</p>
+            <div class="decoration">
+                <div class="star"></div>
+                <div class="lantern"></div>
+                <div class="star"></div>
+            </div>
+            <p class="footer">With warmest wishes on this beautiful occasion</p>
+        </div>
+    </div>
+</body>
+</html>
